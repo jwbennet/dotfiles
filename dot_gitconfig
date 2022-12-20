@@ -1,0 +1,15 @@
+[alias]
+        ci = commit
+        co = checkout
+        br = branch
+        cob = checkout -b
+        rh = reset HEAD
+        st = status
+        origin = config --get remote.origin.url
+[user]
+        name = James Bennett
+        email = jawbenne@iu.edu
+[init]
+        defaultBranch = main
+[core]
+        autocrlf = true
