@@ -1,0 +1,53 @@
+Host escbstst
+    HostName escbstst.uits.iu.edu
+
+Host escbs03
+    HostName escbs03.uits.indiana.edu
+
+Host escontainer*
+    Hostname %h.uits.iu.edu
+
+Host escachet*
+    Hostname %h.uits.iu.edu
+
+Host escachep*
+    Hostname %h.uits.iu.edu
+
+Host essearch*
+    Hostname %h.uits.iu.edu
+
+Host esappj*
+    HostName %h.uits.iupui.edu
+
+Host esjava*
+    HostName %h.uits.indiana.edu
+
+Host jtrain*
+    HostName %h.uits.iu.edu
+
+Host github.iu.edu
+    IdentityFile /home/jawbenne/.ssh/github
+
+Host hla00
+    HostName 10.0.2.0
+Host hla01
+    HostName 10.0.2.1
+Host hla02
+    HostName 10.0.2.2
+Host hla03
+    HostName 10.0.2.3
+Host hlx00
+    HostName 10.0.3.0
+Host hlx01
+    HostName 10.0.3.1
+Host hla*
+    User ubuntu
+    IdentityFile /home/jwbennet/.ssh/homelab
+Host hlx*
+    User ubuntu
+    IdentityFile /home/jwbennet/.ssh/homelab
+
+Host *
+    User jawbenne
+    ForwardAgent yes
+
