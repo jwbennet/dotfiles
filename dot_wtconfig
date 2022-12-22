@@ -1,0 +1,111 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
+        },
+        {
+            "command": "closePane",
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "command": "openTabRenamer",
+            "keys": "ctrl+`"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": true,
+    "defaultProfile": "dev",
+    "disabledProfileSources": [ "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore", "Windows.Terminal.SSH" ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "cursorShape": "filledBox",
+            "font": 
+            {
+                "face": "Courier New",
+                "size": 13
+            },
+			"colorScheme": "Monokai"
+        },
+        "list": 
+        [
+            {
+                "guid": "{9a549227-0bad-5c01-ab6d-9dbfe9447357}",
+                "hidden": false,
+                "name": "dev",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#272822",
+            "black": "#1A1A1A",
+            "blue": "#0383F5",
+            "brightBlack": "#625E4C",
+            "brightBlue": "#006298",
+            "brightCyan": "#0187A0",
+            "brightGreen": "#008A28",
+            "brightPurple": "#66435A",
+            "brightRed": "#990000",
+            "brightWhite": "#F6F6EF",
+            "brightYellow": "#FD971F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#58C2E5",
+            "foreground": "#D9D9D9",
+            "green": "#8DD006",
+            "name": "Monokai",
+            "purple": "#A87DB8",
+            "red": "#F3044B",
+            "selectionBackground": "#FFFFFF",
+            "white": "#C4C5B5",
+            "yellow": "#F5BB17"
+        }
+    ]
+}
