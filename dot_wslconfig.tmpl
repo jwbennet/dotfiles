@@ -1,2 +1,2 @@
 [user]
-default = {{ .chezmoi.username }}
+default = {{ .chezmoi.username | replace (list (upper .chezmoi.hostname) "\\" | join "") "" }}
