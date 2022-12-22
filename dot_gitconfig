@@ -8,8 +8,8 @@
         origin = config --get remote.origin.url
 [user]
         name = James Bennett
-        email = jawbenne@iu.edu
+        email = jwbennet@gmail.com
 [init]
         defaultBranch = main
 [core]
-        autocrlf = true
+        autocrlf = input
