@@ -1,0 +1,3 @@
+$if Bash
+  set mark-symlinked-directories on
+$endif
