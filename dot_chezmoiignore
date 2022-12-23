@@ -1,0 +1,11 @@
+{{- if ne .chezmoi.os "windows" }}
+.wslconfig
+.wtconfig
+.windows.theme
+{{- else }}
+.bash_aliases
+.bashrc
+.emacs
+.hushlogin
+.inputrc
+{{- end }}
