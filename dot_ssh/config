@@ -40,6 +40,8 @@ Host hlx00
     HostName 10.0.3.0
 Host hlx01
     HostName 10.0.3.1
+Host hlx02
+    HostName 10.0.3.2
 Host hla*
     User ubuntu
     IdentityFile /home/jwbennet/.ssh/homelab
