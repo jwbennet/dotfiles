@@ -13,3 +13,14 @@
         defaultBranch = main
 [core]
         autocrlf = input
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[safe]
+{{- if and (hasKey . "git") (hasKey .git "safe") }}
+{{- range .git.safe }}
+        directory = {{ . }}
+{{- end }}
+{{- end }}
