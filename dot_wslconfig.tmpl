@@ -1,2 +1,8 @@
 [user]
 default = {{ .chezmoi.username | replace (list (upper .chezmoi.hostname) "\\" | join "") "" }}
+
+{{ if hasKey . "wsl" -}}
+[wsl2]
+{{if hasKey .wsl "processors" }}processors={{ .wsl.processors }}{{ end }}
+{{if hasKey .wsl "memory" }}memory={{ .wsl.memory }}{{ end }}
+{{ end }}
