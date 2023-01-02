@@ -9,6 +9,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -AlF'
+alias emacs="emacs -nw"
 alias kc='kubectl'
 alias d='docker'
 alias db='docker image build'
