@@ -80,7 +80,7 @@ hotfix() {
 }
 
 # Configure ssh forwarding when not in a dev container
-if [ -f /.dockerenv ]; then
+if [ ! -f /.dockerenv ]; then
     export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
     # need `ps -ww` to get non-truncated command for matching
     # use square brackets to generate a regex match for the process we want but that doesn't match the grep command running it!
