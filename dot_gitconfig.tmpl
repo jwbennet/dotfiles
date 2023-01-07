@@ -24,3 +24,9 @@
         directory = {{ . }}
 {{- end }}
 {{- end }}
+
+{{- if contains "WSL2" .chezmoi.kernel.osrelease }}
+
+[credential]
+        helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{- end }}

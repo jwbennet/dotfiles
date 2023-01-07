@@ -69,6 +69,7 @@ fi
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export EDITOR=emacs
 export GITHUB_API_TOKEN=""
+export ANSIBLE_VAULT_PASSWORD_FILE="$HOME/.ansible-vault"
 
 feature() {
     mvn jgitflow:feature-start -B -DfeatureName="$1" -Dusername=jawbenne -Dpassword="$GITHUB_API_TOKEN"
@@ -77,3 +78,12 @@ feature() {
 hotfix() {
     mvn jgitflow:hotfix-start -B -Dusername=jawbenne -Dpassword="$GITHUB_API_TOKEN"
 }
+
+# Configure ssh forwarding when not in a dev container
+if [ ! -f /.dockerenv ]; then
+    SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+    if [[ ! -S $SSH_AUTH_SOCK ]]; then
+        (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay -ei -s //./pipe/openssh-ssh-agent",nofork &) 2>&1 > /dev/null
+        export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+    fi
+fi
