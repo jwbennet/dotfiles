@@ -1,4 +1,5 @@
 {{- if ne .chezmoi.os "windows" }}
+.dev-machine.json
 .wslconfig
 .wtconfig
 .windows.theme

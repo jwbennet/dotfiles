@@ -1,0 +1,97 @@
+{
+  "timezone": "Eastern Standard Time",
+  {{- if eq .chezmoi.hostname "homelab-dev" }}
+  "wslDistributions": [
+    {
+      "name": "dev",
+      "source": "Ubuntu",
+      "default": true
+    }
+  ],
+  "chocolateyPackages": [
+    "Boxstarter",
+    "npiperelay"
+  ],
+  "wingetPackages": [
+    "7zip.7zip",
+    "Balena.Etcher",
+    "Docker.DockerDesktop",
+    "GIMP.GIMP",
+    "GitHub.GitHubDesktop",
+    "Google.Chrome",
+    "Iterate.Cyberduck",
+    "JetBrains.IntelliJIDEA.Ultimate",
+    "Microsoft.Office",
+    "Microsoft.OneDrive",
+    "Microsoft.OpenSSH.Beta",
+    "Microsoft.PowerToys",
+    "Microsoft.VisualStudioCode",
+    "Microsoft.WindowsTerminal",
+    "Mozilla.Firefox",
+    "Notepad++.Notepad++",
+    "NGWIN.PicPick",
+    "Postman.Postman",
+    "RaspberryPiFoundation.RaspberryPiImager",
+    "SlackTechnologies.Slack",
+    "Spotify.Spotify",
+    "Yubico.YubikeyManager",
+    "Zoom.Zoom"
+  ],
+  {{- else }}
+  "wingetPackages": [
+    "7zip.7zip",
+    "Google.Chrome",
+    "Microsoft.PowerToys",
+    "Notepad++.Notepad++",
+    "NGWIN.PicPick",
+    "SlackTechnologies.Slack",
+    "Spotify.Spotify",
+    "Zoom.Zoom"
+  ],
+  {{- end }}
+  "msStoreApps": [
+    "Trello:9NBLGGH4XXVW"
+  ],
+  "shortcuts": [
+    {{- if eq .chezmoi.hostname "homelab-dev" }}
+    {
+      "source": "${env:ProgramFiles(x86)}/JetBrains/IntelliJ IDEA 2022.3.1/bin/idea64.exe",
+      "target": "$HOME/intellij.lnk"
+    },
+    {
+      "source": "$env:LocalAppData/Programs/GIMP 2/bin/gimp-2.10.exe",
+      "target": "$HOME/gimp.lnk"
+    },
+    {
+      "source": "$env:LocalAppData/Programs/Microsoft VS Code/Code.exe",
+      "target": "$HOME/vsc.lnk"
+    },
+    {{- end }}
+    {
+      "source": "$env:ProgramFiles/Notepad++/notepad++.exe",
+      "target": "$HOME/npp.lnk"
+    }
+  ],
+  "quickAccessItems": [
+    "$HOME"
+  ],
+  "windowsPreferences": [
+    "showHiddenFiles",
+    "showFileExtensions",
+    "openToThisPC",
+    "alwaysShowRightClickContextMenu",
+    "disableSnapAssist",
+    "disableTaskBarTaskView",
+    "disableTaskBarMessenger",
+    "disableTaskBarWidgets",
+    "disableTaskBarSearch"
+    {{- if eq .chezmoi.hostname "homelab-dev" }},
+    "enableRemoteDesktop"
+    {{- end }}
+  ]
+  {{- if eq .chezmoi.hostname "homelab-dev" }},
+  "sshKeys": [
+    "$HOME/.ssh/homelab"
+  ]
+  {{- end }}
+}
