@@ -29,19 +29,19 @@ Host github.iu.edu
     IdentityFile /home/jawbenne/.ssh/github
 
 Host hla00
-    HostName 10.0.2.0
+    HostName 192.168.1.120
 Host hla01
-    HostName 10.0.2.1
+    HostName 192.168.1.121
 Host hla02
-    HostName 10.0.2.2
+    HostName 192.168.1.122
 Host hla03
-    HostName 10.0.2.3
+    HostName 192.168.1.123
 Host hlx00
-    HostName 10.0.3.0
+    HostName 192.168.1.110
 Host hlx01
-    HostName 10.0.3.1
+    HostName 192.168.1.111
 Host hlx02
-    HostName 10.0.3.2
+    HostName 192.168.1.112
 Host hla*
     User ubuntu
     IdentityFile /home/jwbennet/.ssh/homelab
