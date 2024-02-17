@@ -45,7 +45,7 @@
         }
     ],
     "copyFormatting": "none",
-    "copyOnSelect": true,
+    "copyOnSelect": false,
     "defaultProfile": "dev",
     "disabledProfileSources": [ "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore", "Windows.Terminal.SSH" ],
     "profiles": 
