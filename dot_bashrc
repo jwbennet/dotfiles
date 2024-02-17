@@ -81,9 +81,12 @@ hotfix() {
 
 # Configure ssh forwarding when not in a dev container
 if [ ! -f /.dockerenv ]; then
-    SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
-    if [[ ! -S $SSH_AUTH_SOCK ]]; then
-        (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay -ei -s //./pipe/openssh-ssh-agent",nofork &) 2>&1 > /dev/null
-        export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+    export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+    ALREADY_RUNNING=$(ps -auxww | grep -q "[n]piperelay -ei -s //./pipe/openssh-ssh-agent"; echo $?)
+    if [[ $ALREADY_RUNNING != "0" ]]; then
+	if [[ -S $SSH_AUTH_SOCK ]]; then
+            rm $SSH_AUTH_SOCK
+	fi
+	(setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
     fi
 fi
