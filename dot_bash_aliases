@@ -16,3 +16,4 @@ alias kubens='kubectl ns'
 alias d='docker'
 alias db='docker image build'
 alias stern='kubectl stern'
+alias cz=chezmoi
