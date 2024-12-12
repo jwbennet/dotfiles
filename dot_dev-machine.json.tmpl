@@ -91,9 +91,4 @@
     "enableRemoteDesktop"
     {{- end }}
   ]
-  {{- if eq .chezmoi.hostname "homelab-dev" }},
-  "sshKeys": [
-    "$HOME/.ssh/homelab"
-  ]
-  {{- end }}
 }
